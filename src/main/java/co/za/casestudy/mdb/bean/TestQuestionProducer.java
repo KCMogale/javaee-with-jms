@@ -13,14 +13,11 @@ public class TestQuestionProducer {
     private ConnectionFactory connectionFactory;
 
     @Resource(mappedName = "java:/queue/test")
-    Queue queue;
+    private Queue queue;
 
     public void pushMessage() {
         try (JMSContext context = connectionFactory.createContext()) {
-            //context.createProducer().send(queue, "Hello World !");
-            StringBuilder message = new StringBuilder();
-            message.append("Testing TestQuestion");
-            context.createProducer().send(queue, message.toString());
+            context.createProducer().send(queue, "Testing TestQuestion");
         }
     }
 
