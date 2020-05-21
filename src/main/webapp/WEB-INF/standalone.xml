@@ -6,7 +6,7 @@
     <property name="websphere.channel"          value="SYSTEM.AUTO.SVRCONN"/>
     <property name="websphere.transportType"    value="CLIENT"/>
     <property name="websphere.queueManager"     value="QUEUE.MANAGER"/>
-    <property name="websphere.queueName"        value="Q_QUEUE"/>
+    <property name="websphere.queueName"        value="QUEUE.NAME"/>
     <property name="websphere.resource.adapter" value="wmq.jmsra.rar"/>
 </system-properties>
 
@@ -50,7 +50,7 @@
             <admin-objects>
                 <admin-object class-name="com.ibm.mq.connector.outbound.MQQueueProxy" jndi-name="java:/queue/test" use-java-context="true" pool-name="MQ.QUEUE.NAME">
                     <config-property name="baseQueueName">
-                        ${websphere.queueName:Q_QUEUE}
+                        ${websphere.queueName:QUEUE.NAME}
                     </config-property>
                 </admin-object>
             </admin-objects>
